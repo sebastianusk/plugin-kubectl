@@ -6,7 +6,7 @@ function __kubectl.init
     set -a __kubectl_plugin_abbreviations $name
   end
 
-  set -q __kubectl_plugin_initialized; and exit 0
+  not builtin -q abbr; and set -q __git_plugin_initialized; and return 0
 
   set -U __kubectl_plugin_abbreviations
 
